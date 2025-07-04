@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AR NFT - p5.js + p5.SimpleAR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .arjs-loader div {
+        color: white;
+        font-size: 1.2em;
+        text-align: center;
+      }
+    </style>
+      <script src="/p5.min.js"></script>
+      <script src="/bmwalker.js"></script>
+    <script src="/p5.simpleAR.js"></script>
+  </head>
+  <body>
+    <!-- Loader -->
+    <div class="arjs-loader" id="loader">
+      <div>Loading AR experience, please wait...</div>
+    </div>
+
+    <script src="sketch.js"></script>
+    <script>
+      // Ocultar loader una vez que se inicia p5.js
+      window.setup = (function(originalSetup) {
+        return function() {
+          document.getElementById('loader').style.display = 'none';
+          if (originalSetup) originalSetup();
+        };
+      })(window.setup);
+    </script>
+  </body>
+</html>
