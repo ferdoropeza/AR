@@ -1,7 +1,7 @@
 let grid;
 let next;
 
-const w = 750;
+const w = 240;
 const h = w;
 const step = 125;
 const siz = w / step;
@@ -148,7 +148,7 @@ function swap() {
 }
 
 function drawCustomFrame() {
-  const frameThickness = 20; // Grosor del marco negro
+  const frameThickness = 10; // Grosor del marco negro
   fill('#000000'); // Marco negro
   noStroke();
   
