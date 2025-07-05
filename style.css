@@ -1,40 +1,75 @@
 * {
   font-family: monospace;
-  z-index: 10;
+  box-sizing: border-box;
 }
- body {
-        margin: 0;
+
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white; /* o el color que quieras */
-      }
-      .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.85);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .arjs-loader div {
-        color: white;
-        font-size: 1.2em;
-        text-align: center;
-      }
+  overflow: hidden;
+}
+
+#container {
+  position: relative;
+  width: 240px;
+  height: 240px;
+}
 
 canvas {
   width: 240px !important;
   height: 240px !important;
   display: block;
-  margin: 0 auto; /* para centrar horizontalmente */
-  image-rendering: pixelated; /* para evitar suavizado si quieres */
+  image-rendering: pixelated;
+  z-index: 1;
 }
 
+/* Loader sobre el canvas */
+.arjs-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 240px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
 
+.loader-content {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
 
+.loader-content .title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.4em;
+}
+
+.loader-content .instructions {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 0.6em;
+}
+
+.loader-content .loading-text {
+  font-size: 0.8em;
+  font-style: italic;
+  margin-bottom: 1.2em;
+}
+
+.loader-content .signature {
+  font-size: 0.7em;
+  opacity: 0.6;
+  font-style: italic;
+}
