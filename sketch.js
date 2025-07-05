@@ -159,7 +159,3 @@ function drawCustomFrame() {
   rect(w - frameThickness, 0, frameThickness, h); // Parte derecha
   rect(0, h - frameThickness, w, frameThickness); // Parte inferior
 }
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
