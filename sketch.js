@@ -32,7 +32,7 @@ function createCols(url) {
 }
 
 function setup() {
-  createARCanvas(windowWidth, windowHeight);
+  createARCanvas(w,h);
 
   pixelDensity(1);
 
