@@ -2,12 +2,31 @@
   font-family: monospace;
   z-index: 10;
 }
-body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background-color: white;
-}
+ body {
+        margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white; /* o el color que quieras */
+      }
+      .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .arjs-loader div {
+        color: white;
+        font-size: 1.2em;
+        text-align: center;
+      }
 
 canvas {
   width: 240px !important;
