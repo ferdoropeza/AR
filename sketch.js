@@ -32,7 +32,8 @@ function createCols(url) {
 }
 
 function setup() {
-  createARCanvas(w, h);
+  createARCanvas(windowWidth, windowHeight);
+
   pixelDensity(1);
 
   grid = [];
@@ -57,7 +58,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(255);
 
   // Cambiar parámetros y paleta cada 300 frames
   if (frameCount % 300 === 0) {
@@ -157,4 +158,8 @@ function drawCustomFrame() {
   rect(0, 0, frameThickness, h); // Parte izquierda
   rect(w - frameThickness, 0, frameThickness, h); // Parte derecha
   rect(0, h - frameThickness, w, frameThickness); // Parte inferior
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
